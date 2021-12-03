@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "task-eb985": {
+      "hosting": {
+        "tasknew": [
+          "task-eb985"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "task-eb985"
+  }
+}

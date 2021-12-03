@@ -33,7 +33,9 @@
             "styles": [
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [
+
+            ]
           },
           "configurations": {
             "production": {
@@ -64,6 +66,14 @@
               "extractLicenses": false,
               "sourceMap": true,
               "namedChunks": true
+            },
+            "staging": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.stagg.ts"
+                }
+              ]
             }
           },
           "defaultConfiguration": "production"
@@ -76,6 +86,9 @@
             },
             "development": {
               "browserTarget": "tasknew:build:development"
+            },
+            "staging": {
+              "browserTarget": "tasknew:build:staging"
             }
           },
           "defaultConfiguration": "development"
@@ -103,7 +116,18 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "prerender": false,
+            "ssr": false,
+            "browserTarget": "tasknew:build:production",
+            "firebaseProject": "task-eb985",
+            "firebaseHostingSite": "task-eb985"
+          }
         }
+
       }
     }
   },
